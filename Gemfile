@@ -25,7 +25,8 @@ group :test, :development do
   gem 'cucumber-rails'
   gem 'rspec-rails', '>= 2.6'
   gem 'database_cleaner'
+  gem 'capybara'
 end
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'

@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="conteiner">
+    <%= yield %>
+    <div id="shopping_cart">
+      <ul>
+        <% session[:shopping_cart].each do |prod| %>
+        <li><%= prod.name %></li>
+        <% end if session[:shopping_cart] %>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>

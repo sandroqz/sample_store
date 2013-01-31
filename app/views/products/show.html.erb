@@ -1,0 +1,4 @@
+<h2><%= @product.name %></h2>
+<p>Detalhes do Livro:</p>
+<p><%= @product.description %></p>
+<p><%= link_to "Comprar", shopping_cart_path(product_id: @product.id), method: :put %></p>
