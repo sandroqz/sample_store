@@ -11,5 +11,13 @@ require 'spec_helper'
 #   end
 # end
 describe ShoppingCartsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#shopping_cart_tag" do
+    it "should display an empty shopping cart if no item was already added" do
+      helper.shopping_cart_tag.should == %q{<div id="shopping_cart"><ul></ul></div>}
+    end
+    it "should display the items in the shopping cart when they exist" do
+      session[:shopping_cart] = [Product.new(name: 'Produto 1'), Product.new(name: 'Produto 2')]
+      helper.shopping_cart_tag.should == %q{<div id="shopping_cart"><ul><li>Produto 1</li><li>Produto 2</li></ul></div>}
+    end
+  end
 end
