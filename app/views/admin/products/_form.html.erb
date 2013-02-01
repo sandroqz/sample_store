@@ -1,0 +1,5 @@
+<%= form_for [:admin, @product], :remote => true do |f| %>
+  <%= f.label :name, "Nome" %><%= f.text_field :name %><br />
+  <%= f.label :description, "Descrição" %><%= f.text_area :description %><br />
+  <%= f.submit "Salvar" %>
+<% end %>
